@@ -1,0 +1,26 @@
+# This is a basic workflow that is manually triggered
+
+name: Manual workflow
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  push:
+    branches: 
+      - main
+  pull_request:
+    branches: 
+      - main
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  zip:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v1
+      - name: Zip Folder ADS-Praktikum01
+        run: zip -r ADS-Praktikum01-archiluc.zip ./Praktikas/ADS-Praktikum01/src/main/java/Praktikum_01_Code/
+      - uses: actions/checkout@v1
+      - name: Zip Folder ADS-Praktikum02
+        run: zip -r ADS-Praktikum02-archiluc.zip ./Praktikas/ADS-Praktikum02/src/main/java/Praktikum_02_Code/
+
