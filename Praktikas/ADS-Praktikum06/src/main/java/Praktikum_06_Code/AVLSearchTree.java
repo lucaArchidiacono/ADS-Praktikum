@@ -5,7 +5,7 @@ public class AVLSearchTree<T extends Comparable<T>> extends SortedBinaryTree<T> 
     /**
      * Return the height of node t, or 0, if null.
      */
-    private int height(TreeNode t) {
+    private int height(TreeNode<T> t) {
         return t == null ? 0 : t.height;
     }
 
@@ -22,14 +22,18 @@ public class AVLSearchTree<T extends Comparable<T>> extends SortedBinaryTree<T> 
         if (height(p.left) - height(p.right) == 2) {
             if (height(p.left.left) > height(p.left.right)) {
                 // to be done
+                p = rotateR(p);
             } else {
                 // to be done
+                p = rotateLR(p);
             }
         } else if (height(p.right) - height(p.left) == 2) {
             if (height(p.right.right) > height(p.right.left)) {
                 // to be done
+                p = rotateL(p);
             } else {
                 // to be done
+                p = rotateRL(p);
             }
         }
         p.height = Math.max(height(p.left), height(p.right)) + 1;
@@ -42,7 +46,7 @@ public class AVLSearchTree<T extends Comparable<T>> extends SortedBinaryTree<T> 
      * @param element the node that roots the tree.
      * @return the new root.
      */
-    private TreeNode insertAt(TreeNode p, T element) {
+    private TreeNode<T> insertAt(TreeNode<T> p, T element) {
         if (p == null) {
             p = new TreeNode<T>(element);
             return p;
@@ -52,7 +56,7 @@ public class AVLSearchTree<T extends Comparable<T>> extends SortedBinaryTree<T> 
                 p.count++;
             } else if (c < 0) {
                 p.left = insertAt(p.left, element);
-            } else if (c > 0) {
+            } else {
                 p.right = insertAt(p.right, element);
             }
         }
@@ -101,7 +105,7 @@ public class AVLSearchTree<T extends Comparable<T>> extends SortedBinaryTree<T> 
                 node.right = removeAt(node.right, x, removed);
             }
             // to be done
-            return node;
+            return balance(node);
         }
     }
 
@@ -124,8 +128,8 @@ public class AVLSearchTree<T extends Comparable<T>> extends SortedBinaryTree<T> 
      * For AVL trees, this is a single rotation for case 1.
      * Update heights, then return new root.
      */
-    private TreeNode rotateR(TreeNode k2) {
-        TreeNode k1 = k2.left;
+    private TreeNode<T> rotateR(TreeNode<T> k2) {
+        TreeNode<T> k1 = k2.left;
         k2.left = k1.right;
         k1.right = k2;
         k2.height = Math.max(height(k2.left), height(k2.right)) + 1;
@@ -138,8 +142,8 @@ public class AVLSearchTree<T extends Comparable<T>> extends SortedBinaryTree<T> 
      * For AVL trees, this is a single rotation for case 4.
      * Update heights, then return new root.
      */
-    private TreeNode rotateL(TreeNode k1) {
-        TreeNode k2 = k1.right;
+    private TreeNode<T> rotateL(TreeNode<T> k1) {
+        TreeNode<T> k2 = k1.right;
         k1.right = k2.left;
         k2.left = k1;
         k1.height = Math.max(height(k1.left), height(k1.right)) + 1;
@@ -153,7 +157,7 @@ public class AVLSearchTree<T extends Comparable<T>> extends SortedBinaryTree<T> 
      * For AVL trees, this is a double rotation for case 2.
      * Update heights, then return new root.
      */
-    private TreeNode rotateLR(TreeNode k3) {
+    private TreeNode<T> rotateLR(TreeNode<T> k3) {
         k3.left = rotateL(k3.left);
         return rotateR(k3);
     }
@@ -164,7 +168,7 @@ public class AVLSearchTree<T extends Comparable<T>> extends SortedBinaryTree<T> 
      * For AVL trees, this is a double rotation for case 3.
      * Update heights, then return new root.
      */
-    private TreeNode rotateRL(TreeNode k1) {
+    private TreeNode<T> rotateRL(TreeNode<T> k1) {
         k1.right = rotateR(k1.right);
         return rotateL(k1);
     }

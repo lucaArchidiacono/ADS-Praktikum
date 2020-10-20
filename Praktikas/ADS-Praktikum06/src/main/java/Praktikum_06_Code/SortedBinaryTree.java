@@ -77,13 +77,15 @@ public class SortedBinaryTree<T extends Comparable<T>> implements Tree<T> {
 
     protected int calcHeight(TreeNode<T> node) {
         // to be implemented
-        return node.height;
+        if (node == null) return 0;
+        return 1 + Math.max(calcHeight(node.left), calcHeight(node.right));
     }
 
 
     protected int calcSize(TreeNode<T> p) {
         // to be implemented
-        return p.count;
+        if (p == null) return 0;
+        return p.count + calcSize(p.left) + calcSize(p.right);
     }
 
     public int height() {
@@ -95,7 +97,19 @@ public class SortedBinaryTree<T extends Comparable<T>> implements Tree<T> {
     }
 
     public boolean balanced() {
-        throw new UnsupportedOperationException();
+        return isBalanced(root);
+    }
+
+    protected boolean isBalanced(TreeNode<T> node) {
+        int leftNodeHeight;
+        int rightNodeHeight;
+
+        if (node == null) return true;
+
+        leftNodeHeight = calcHeight(node.left);
+        rightNodeHeight = calcHeight(node.right);
+
+        return Math.abs(leftNodeHeight - rightNodeHeight) <= 1 && isBalanced(node.left) && isBalanced(node.right);
     }
 
     // only for testing and debugging purposes: show the structure of the tree

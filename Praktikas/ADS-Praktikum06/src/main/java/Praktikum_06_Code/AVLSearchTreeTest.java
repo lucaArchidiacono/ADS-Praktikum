@@ -28,28 +28,28 @@ public class AVLSearchTreeTest {
 
     @Test
     public void testInorder() {
-        Visitor<String> v = new TreeMyVisitor<String>();
+        Visitor<String> v = new MyVisitor<String>();
         tree.traversal().inorder(v);
         assertEquals("inorder", "ABCDEFGHJ", v.toString());
     }
 
     @Test
     public void testPreorder() {
-        Visitor<String> v = new TreeMyVisitor<String>();
+        Visitor<String> v = new MyVisitor<String>();
         tree.traversal().preorder(v);
         assertEquals("preorder", "FBADCEHGJ", v.toString());
     }
 
     @Test
     public void testPostorder() {
-        Visitor<String> v = new TreeMyVisitor<String>();
+        Visitor<String> v = new MyVisitor<String>();
         tree.traversal().postorder(v);
         assertEquals("postorder", "ACEDBGJHF", v.toString());
     }
 
     @Test
-    public void testLevelörder() {
-        Visitor<String> v = new TreeMyVisitor<String>();
+    public void testLevelorder() {
+        Visitor<String> v = new MyVisitor<String>();
         tree.traversal().levelorder(v);
         assertEquals("levelorder", "FBHADGJCE", v.toString());
     }
@@ -77,10 +77,10 @@ public class AVLSearchTreeTest {
         tree.remove("F");
         tree.remove("H");
         tree.remove("J");
-        Visitor<String> v = new TreeMyVisitor<String>();
+        Visitor<String> v = new MyVisitor<String>();
         tree.traversal().inorder(v);
         assertEquals("remove", "ABCDEG", v.toString());
-        v = new TreeMyVisitor<String>();
+        v = new MyVisitor<String>();
         tree.traversal().levelorder(v);
         assertEquals("remove", "DBEACG", v.toString());
     }
