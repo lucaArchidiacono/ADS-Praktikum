@@ -20,19 +20,19 @@ jobs:
       - uses: actions/checkout@v1
       - name: Zip Folder ADS-Praktikum and create Release Folder
         run: |
-          zip ADS-Praktikum01-archiluc.zip ./Praktikas/ADS-Praktikum01/src/main/java/Praktikum_01_Code/
-          zip ADS-Praktikum02-archiluc.zip ./Praktikas/ADS-Praktikum02/src/main/java/Praktikum_02_Code/
-          zip ADS-Praktikum03-archiluc.zip ./Praktikas/ADS-Praktikum03/src/main/java/Praktikum_03_Code/
-          zip ADS-Praktikum04-archiluc.zip ./Praktikas/ADS-Praktikum04/src/main/java/Praktikum_04_Code/
-          zip ADS-Praktikum05-archiluc.zip ./Praktikas/ADS-Praktikum05/src/main/java/Praktikum_05_Code/
-          zip ADS-Praktikum06-archiluc.zip ./Praktikas/ADS-Praktikum06/src/main/java/Praktikum_06_Code/
-          zip ADS-Praktikum07-archiluc.zip ./Praktikas/ADS-Praktikum07/src/main/java/Praktikum_07_Code/
-          zip ADS-Praktikum08-archiluc.zip ./Praktikas/ADS-Praktikum08/src/main/java/Praktikum_08_Code/
-          zip ADS-Praktikum09-archiluc.zip ./Praktikas/ADS-Praktikum09/src/main/java/Praktikum_09_Code/
-          zip ADS-Praktikum10-archiluc.zip ./Praktikas/ADS-Praktikum10/src/main/java/Praktikum_10_Code/
-          zip ADS-Praktikum11-archiluc.zip ./Praktikas/ADS-Praktikum11/src/main/java/Praktikum_11_Code/
-          zip ADS-Praktikum12-archiluc.zip ./Praktikas/ADS-Praktikum12/src/main/java/Praktikum_12_Code/
-          zip ADS-Praktikum13-archiluc.zip ./Praktikas/ADS-Praktikum13/src/main/java/Praktikum_13_Code/
+          zip -r -D ADS-Praktikum01-archiluc.zip ./Praktikas/ADS-Praktikum01/src/main/java/Praktikum_01_Code/
+          zip -r -D ADS-Praktikum02-archiluc.zip ./Praktikas/ADS-Praktikum02/src/main/java/Praktikum_02_Code/
+          zip -r -D ADS-Praktikum03-archiluc.zip ./Praktikas/ADS-Praktikum03/src/main/java/Praktikum_03_Code/
+          zip -r -D ADS-Praktikum04-archiluc.zip ./Praktikas/ADS-Praktikum04/src/main/java/Praktikum_04_Code/
+          zip -r -D ADS-Praktikum05-archiluc.zip ./Praktikas/ADS-Praktikum05/src/main/java/Praktikum_05_Code/
+          zip -r -D ADS-Praktikum06-archiluc.zip ./Praktikas/ADS-Praktikum06/src/main/java/Praktikum_06_Code/
+          zip -r -D ADS-Praktikum07-archiluc.zip ./Praktikas/ADS-Praktikum07/src/main/java/Praktikum_07_Code/
+          zip -r -D ADS-Praktikum08-archiluc.zip ./Praktikas/ADS-Praktikum08/src/main/java/Praktikum_08_Code/
+          zip -r -D ADS-Praktikum09-archiluc.zip ./Praktikas/ADS-Praktikum09/src/main/java/Praktikum_09_Code/
+          zip -r -D ADS-Praktikum10-archiluc.zip ./Praktikas/ADS-Praktikum10/src/main/java/Praktikum_10_Code/
+          zip -r -D ADS-Praktikum11-archiluc.zip ./Praktikas/ADS-Praktikum11/src/main/java/Praktikum_11_Code/
+          zip -r -D ADS-Praktikum12-archiluc.zip ./Praktikas/ADS-Praktikum12/src/main/java/Praktikum_12_Code/
+          zip -r -D ADS-Praktikum13-archiluc.zip ./Praktikas/ADS-Praktikum13/src/main/java/Praktikum_13_Code/
       - name: Put ADS01 to Artifact
         uses: actions/upload-artifact@v2
         with:
