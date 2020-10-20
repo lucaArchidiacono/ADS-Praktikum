@@ -30,6 +30,6 @@ jobs:
       - name: Easy Zip Files
         uses: vimtor/action-zip@v1
         with:
-          files: Praktikas/ADS-Praktikum01/src/main/java/Praktikum_01_Code/
+          files: ADS-Praktikum/Praktikas/ADS-Praktikum01/src/main/java/Praktikum_01_Code/
           dest: ADS-Praktikum01-archiluc.zip
 
