@@ -11,4 +11,12 @@ public class ExBox {
         f.setLocationRelativeTo(null);  
         f.setVisible(true);
     }
+
+    private static void p(int i)
+    {
+        if (i<10){
+            p(i+1);
+            System.out.println(i);
+        }
+    }
 }
