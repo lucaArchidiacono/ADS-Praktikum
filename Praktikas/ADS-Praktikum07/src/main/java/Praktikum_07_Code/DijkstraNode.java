@@ -1,6 +1,6 @@
 package Praktikum_07_Code;
 
-class DijkstraNode<E> extends Node<E> implements Comparable<DijkstraNode>  {
+class DijkstraNode<E> extends Node<E> implements Comparable<DijkstraNode<E>>  {
     boolean mark;
     DijkstraNode<E> prev;
     double dist;
@@ -31,6 +31,6 @@ class DijkstraNode<E> extends Node<E> implements Comparable<DijkstraNode>  {
 
     public int compareTo(DijkstraNode n) {
         // TODO: implement
-        return 0;
+        return (int) (dist - n.dist);
     }
 }

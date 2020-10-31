@@ -1,7 +1,6 @@
 package Praktikum_07_Code;
 
-public class Edge<N>
-{
+public class Edge<N> {
     protected N dest;  // Zielknoten der Kante
     protected double weight;  // Kantengewicht
 

@@ -2,13 +2,13 @@ package Praktikum_07_Code;
 
 import java.util.*;
 
-public class AdjListGraph<N extends Node,E extends Edge>
+public class AdjListGraph<N extends Node<E>,E extends Edge<N>>
         implements Graph<N, E> {
     private final List<N> nodes = new LinkedList<N>();
-    private final Class nodeClazz;
-    private final Class edgeClazz;
+    private final Class<N> nodeClazz;
+    private final Class<E> edgeClazz;
 
-    public AdjListGraph(Class nodeClazz, Class edgeClazz) {
+    public AdjListGraph(Class<N> nodeClazz, Class<E> edgeClazz) {
         this.nodeClazz = nodeClazz;
         this.edgeClazz = edgeClazz;
     }
