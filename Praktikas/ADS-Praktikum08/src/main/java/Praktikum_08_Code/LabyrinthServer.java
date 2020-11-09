@@ -5,7 +5,7 @@ import java.awt.*;
 public class LabyrinthServer implements CommandExecutor {
 
     private Graph<LabyrinthNode, Edge> labyrinth = new AdjListGraph<>(LabyrinthNode.class, Edge.class);
-    private final double SCALE = 10;
+    private final double SCALE = 11;
     private ServerGraphics serverGraphics = new ServerGraphics();
     private int counter = 0;
 
@@ -50,6 +50,7 @@ public class LabyrinthServer implements CommandExecutor {
     private String findExit(){
         LabyrinthNode startNode = labyrinth.findNode(String.valueOf(0));
         LabyrinthNode goalNode = labyrinth.findNode(String.valueOf(counter));
+        drawPath(goalNode.from, goalNode.to, true);
 
         if(search(startNode.name, goalNode.name)){
             serverGraphics.setColor(Color.red);
