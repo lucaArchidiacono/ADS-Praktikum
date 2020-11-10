@@ -1,15 +1,12 @@
-/**
+/*
  * ServerFactory -- Praktikum Experimentierkasten --
  *
  * @author K. Rege
  * @version 1.0 -- Factory zur Erstellung von Server Objekten
  * @version 2.0 -- Dynamisches Nachladen
  */
-package Praktikum_09_Code;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.RandomAccessFile;
+import java.io.*;
 
 /* Classloader that handles file path of class
  */
@@ -39,7 +36,7 @@ class MyClassLoader extends ClassLoader {
 		Class<?> clazz;
 		byte[] classData = getBytes(name);
 		if (classData != null) {
-			clazz = defineClass(classData, 0, classData.length);
+			clazz = defineClass(null, classData, 0, classData.length);
 			path = name.substring(0,
 					name.length() - clazz.getName().length() - ".class".length());
 			return clazz;
@@ -47,7 +44,7 @@ class MyClassLoader extends ClassLoader {
 		if (!resolve) {
 			classData = getBytes(path + name.replace(".", File.separator) + ".class");
 			if (classData != null) {
-				return defineClass(classData, 0, classData.length);
+				return defineClass(null, classData, 0, classData.length);
 			}
 		}
 		return findSystemClass(name);	
@@ -65,6 +62,6 @@ public class ServerFactory {
 	}
 	
 	public static CommandExecutor createServer(String name) throws Exception {
-		return (CommandExecutor) loadClass(name).newInstance();
+		return (CommandExecutor) loadClass(name).getDeclaredConstructor().newInstance();
 	}
 }

@@ -4,9 +4,10 @@
  * @author E. Mumprecht
  * @version 1.0 -- Geruest fuer irgendeinen Server
  */
-package Praktikum_09_Code;
 
 public class AnyServer implements CommandExecutor {
+
+
 
     //----- Dies implementiert das CommandExecutor Interface.
     @Override

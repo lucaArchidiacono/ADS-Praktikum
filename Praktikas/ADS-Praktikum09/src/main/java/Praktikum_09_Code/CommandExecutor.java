@@ -6,7 +6,6 @@
  * @version 1.0 -- Geruest fuer irgendeinen Server
  * @version 1.1 -- K. Rege Fehlerueckgabe hinzugefuegt
  */
-package Praktikum_09_Code;
 
 public interface CommandExecutor {
 
