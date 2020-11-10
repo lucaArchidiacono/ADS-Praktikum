@@ -1,3 +1,5 @@
+package Praktikum_09_Code;
+
 /**
  * @author K. Rege
  * @version 1.0 -- Experimentierkasten

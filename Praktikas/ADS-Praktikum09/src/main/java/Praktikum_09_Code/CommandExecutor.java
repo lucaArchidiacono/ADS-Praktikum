@@ -1,3 +1,5 @@
+package Praktikum_09_Code;
+
 /**
  * CommandExecutor -- Praktikum Experimentierkasten -- SW3 Dieses Interface muss
  * von jedem Server implementiert werden.

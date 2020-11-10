@@ -1,3 +1,4 @@
+package Praktikum_09_Code;
 import java.util.*;
 
 public class MyHashtable<K,V> implements java.util.Map<K,V> {

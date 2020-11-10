@@ -1,3 +1,5 @@
+package Praktikum_09_Code;
+
 /**
  * @(#)ExBoxFrame.java
  *
