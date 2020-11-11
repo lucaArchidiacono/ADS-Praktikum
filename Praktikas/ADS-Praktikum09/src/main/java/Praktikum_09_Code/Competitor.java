@@ -16,6 +16,11 @@ public class Competitor implements Comparable<Competitor>  {
     private int startNr;
     private int rank;
 
+    public Competitor(String name, int jg) {
+        this.name = name;
+        this.jg = jg;
+    }
+
     public Competitor(int startNr, String name, int jg, String country, String time) throws Exception {
         this.name = name;
         this.country = country;
