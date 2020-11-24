@@ -2,8 +2,9 @@ package Praktikum_11_Code;
 
 
 import javax.swing.*;
+import java.awt.event.*;
 import java.awt.*;
-import java.util.StringTokenizer;
+import java.util.*;
 
 
 public class GraphicPanel extends JPanel {
