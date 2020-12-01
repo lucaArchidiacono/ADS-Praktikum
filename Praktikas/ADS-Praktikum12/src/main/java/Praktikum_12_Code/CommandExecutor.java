@@ -1,3 +1,5 @@
+package Praktikum_12_Code;
+
 /**
  * CommandExecutor -- Praktikum Experimentierkasten -- SW3 Dieses Interface muss
  * von jedem Server implementiert werden.
@@ -6,8 +8,6 @@
  * @version 1.0 -- Geruest fuer irgendeinen Server
  * @version 1.1 -- K. Rege Fehlerueckgabe hinzugefuegt
  */
-package Praktikum_12_Code;
-
 public interface CommandExecutor {
 
     /**

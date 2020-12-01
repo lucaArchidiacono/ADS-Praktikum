@@ -1,8 +1,12 @@
+package Praktikum_12_Code;
 /**
  * @author K. Rege
  * @version 1.0 -- Experimentierkasten
  */
-package Praktikum_12_Code;
+
+import java.awt.*;
+import java.io.*;
+import java.awt.event.*;
 
 public class ExBox {
 

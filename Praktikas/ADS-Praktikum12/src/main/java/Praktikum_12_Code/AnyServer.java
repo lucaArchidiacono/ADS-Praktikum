@@ -1,12 +1,15 @@
+package Praktikum_12_Code;
+
 /**
  * AnyServer -- Praktikum Experimentierkasten -- ADS
  *
  * @author E. Mumprecht
  * @version 1.0 -- Geruest fuer irgendeinen Server
  */
-package Praktikum_12_Code;
 
 public class AnyServer implements CommandExecutor {
+
+
 
     //----- Dies implementiert das CommandExecutor Interface.
     @Override

@@ -1,3 +1,5 @@
+package Praktikum_12_Code;
+
 /**
  * @(#)ExBoxFrame.java
  *
@@ -11,27 +13,18 @@
  * @version	2d.02 2018/2/5 Reconnect (inspired by S. Kunz)
  */
 
-package Praktikum_12_Code;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
 
-
-import org.junit.runner.Description;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 import org.junit.runner.notification.RunListener;
-
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
-import java.util.LinkedList;
-import java.util.Set;
+import org.junit.runner.Description;
 
 
 public class ExBoxFrame extends JFrame implements ActionListener, ItemListener {
@@ -272,7 +265,7 @@ public class ExBoxFrame extends JFrame implements ActionListener, ItemListener {
 		String name = openFileDialog(null, null);
 
 		BufferedReader br = new BufferedReader(
-				new InputStreamReader(new FileInputStream(name), "ISO-8859-1"));
+				new InputStreamReader(new FileInputStream(name), StandardCharsets.UTF_8));
 		StringBuffer b = new StringBuffer();
 		String line;
 		while ((line = br.readLine()) != null) {
