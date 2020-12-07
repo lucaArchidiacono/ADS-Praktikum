@@ -1,10 +1,8 @@
 package Praktikum_12_Code;
 
-import java.util.Random;
+public class QuickSortServer implements QuickSort, CommandExecutor {
 
-public class QuickSortServer implements QuickSort {
-
-    public void quickSort(int[] a){
+    public void quickerSort(int[] a){
         quickSort(a, 0, a.length-1);
     }
 
@@ -31,10 +29,13 @@ public class QuickSortServer implements QuickSort {
     }
 
     public void swap(int[] arr, int i, int j) {
-        int swapElement;
-
-        swapElement = arr[i];
+        int swapElement = arr[i];
         arr[i] = arr[j];
         arr[j] = swapElement;
+    }
+
+    @Override
+    public String execute(String command) {
+        return ExecuteUtil.execute(this, command);
     }
 }

@@ -1,7 +1,7 @@
 package Praktikum_12_Code;
 
 public interface QuickSort {
-    void quickSort(int[] a);
+    void quickerSort(int[] a);
     void quickSort(int[] arr, int left, int right);
     int partition (int[] arr, int left, int right);
     void swap(int[] arr, int i, int j);
