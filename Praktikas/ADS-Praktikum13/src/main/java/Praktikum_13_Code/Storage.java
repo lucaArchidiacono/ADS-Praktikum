@@ -77,7 +77,7 @@ public class Storage {
 
 	/* dump an iterator */
 	public static void dump(String s, Iterable itr) {
-		log.append(s); 
+		log.append(s);
 		for (Object o: itr) {
 			log.append(" ").append(o.toString());
 		}
@@ -97,7 +97,7 @@ public class Storage {
 
 	private static void sweep() {
 		// to be done
-		for (Collectable collectable: heap) {
+		for (Collectable collectable: getHeap()) {
 			if (collectable.isMarked()) {
 				collectable.setMark(false);
 			} else {
@@ -109,7 +109,7 @@ public class Storage {
 	public static void gc() {
 		log.append("Collector start\n");
 		// to be done
-		for(Collectable collectable: root) {
+		for(Collectable collectable: getRoot()) {
 			mark(collectable);
 		}
 		sweep();
